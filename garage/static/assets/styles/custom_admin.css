@@ -1,0 +1,121 @@
+/* Change background color */
+body {
+    background-color: #1e1e1e !important; /* Dark theme */
+    color: white;
+}
+
+/* Change header color */
+#header {
+    background-color: #ff6600 !important; /* Orange Header */
+}
+
+/* Change sidebar color */
+#nav-sidebar {
+    background-color: #333 !important;
+    color: white;
+}
+
+/* Style buttons */
+.button, 
+input[type="submit"], 
+.submit-row input {
+    background-color: #ff6600 !important;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Fix hidden "Delete Selected" button */
+.actions button[type="submit"],
+.actions input[type="submit"] {
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: white !important;
+    background-color: red !important; /* Adjust color as needed */
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Ensure bulk delete action is visible */
+.selector .select-across {
+    display: inline !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Change table headers */
+th {
+    background-color: #444 !important;
+    color: #ffcc00;
+}
+
+/* Style table rows */
+tr {
+    background-color: #222 !important;
+    color: white;
+}
+
+/* Change hover effect on table rows */
+tr:hover {
+    background-color: #333 !important;
+}
+
+/* Style checkboxes */
+input[type="checkbox"] {
+    transform: scale(1.3);
+    margin-right: 5px;
+}
+
+/* Fix action bar visibility */
+#changelist-form .actions {
+    background-color: #222 !important;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Highlight selected rows */
+tr.selected {
+    background-color: #555 !important;
+}
+
+/* Fix select dropdown styling */
+select {
+    background-color: #333 !important;
+    color: white;
+    border: 1px solid #ff6600;
+    padding: 5px;
+    border-radius: 4px;
+}
+/* Ensure the delete confirmation button is visible */
+.submit-row input[type="submit"],
+.actions button,
+.actions input[type="submit"] {
+    display: inline-block !important;
+    background-color: #ff6600 !important; /* Match your theme */
+    color: white !important;
+    border: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Ensure the action dropdown is properly styled */
+#changelist-form .actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* If the button is hidden, force it to appear */
+.submit-row input[hidden],
+.actions input[hidden],
+.actions button[hidden] {
+    display: inline-block !important;
+}

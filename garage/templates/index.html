@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/styles/reset.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/styles/general.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/styles/header.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/styles/hero.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/styles/services.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/styles/footer.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/styles/about.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/styles/faq.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/styles/location.css' %}">
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav class="nav-container">
+      <div class="logo-container">
+        <a href="#">
+          <img src="{% static 'assets/images/fastlane-logo.svg' %}" alt="fastlane-garage-logo">
+        </a>
+      </div>
+      <div class="toggle-menu-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+          <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
+        </svg>
+      </div>
+      <div class="navbar-links">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#">Contact</a></li>
+          {% if user.is_staff %}
+            <li><a href="{% url 'admin:index' %}" class="admin-button">Admin Panel</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main-container">
+    <div class="hero">
+      <div class="hero-left">
+        <h1>Unleash Your Car's True Potential</h1>
+        <p id="paragraph">
+          Premium upgrades and personalized solutions
+          for every car enthusiast at FastLane Garage
+        </p>
+        <button id="button-text">
+          Book an Appointment
+        </button>
+      </div>
+      <div class="hero-right">
+        <img src="{% static 'assets/images/garage-bg-egor-myznik-unsplash.jpg' %}" alt="image of a garage">
+      </div>
+    </div>
+
+    <!--service section-->
+    <div class="service-section" id="services">
+      <h2>Our Services</h2>
+      <div class="container-service">
+        <div class="image">
+          <img src="{% static 'assets/images/general-service.jpg' %}" alt="service image">
+        </div>
+        <div class="text">
+          <h3>General Service</h3>
+          <p style="margin-bottom: 7px;">Our comprehensive car maintenance services are designed to keep your vehicle running at its best. We provide routine oil changes to ensure your engine operates smoothly and efficiently, along with brake inspections and replacements to guarantee your safety on the road. Our tire services include rotation, balancing, alignment, and replacements, enhancing both performance and longevity. Additionally, we offer advanced diagnostic services to quickly identify and resolve any warning lights or underlying issues before they become major problems. Whether it's preventive maintenance or in-depth repairs, our expert team is committed to delivering reliable, high-quality service to keep your car in top condition. </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-section">
+      <div class="container-service">
+        <div class="text">
+          <h3>Performance</h3>
+          <p style="margin-bottom: 7px;">Take your vehicle to the next level with our high-performance upgrades, designed for both driving enthusiasts and track-ready professionals. Our engine tuning services maximize horsepower and torque, while ECU tuning fine-tunes your car's computer for optimal responsiveness and efficiency. Improve handling and stability with suspension upgrades, including coilovers and performance springs, ensuring a smoother, more controlled ride. Enhance stopping power with braking system upgrades, such as big brake kits and high-performance pads, delivering superior safety and precision. For those looking to make a statement, we also offer custom exhaust systems, aerodynamic enhancements, and lightweight performance parts to refine both speed and style. Whether you're chasing lap times or just want an exhilarating drive, our expert team is here to unlock your car's full potential.</p>
+        </div>
+        <div class="image">
+          <img src="{% static 'assets/images/performance.jpg' %}" alt="service image">
+        </div>
+      </div>
+    </div>
+
+    <div class="service-section">
+      <div class="container-service">
+        <div class="image">
+          <img src="{% static 'assets/images/body-shop.jpg' %}" alt="service image">
+        </div>
+        <div class="text">
+          <h3>Body Shop</h3>
+          <p style="margin-bottom: 7px;">Restore and enhance your vehicle's appearance with our professional body shop services, designed to keep your car looking flawless. We specialize in paintless dent repair for minor dings and scratches, providing a seamless finish without the need for extensive repainting. Our collision repair services include frame straightening, panel replacements, and expert color-matched repainting to ensure your car looks factory-fresh. For scratches, chips, or faded paint, our refinishing services will revitalize your vehicle's exterior, restoring its original shine. We also offer rust removal and corrosion protection, preventing long-term damage and preserving your car's structural integrity. Additionally, our headlight restoration service improves visibility and enhances your car's overall aesthetic. Whether it's a minor touch-up or a full-body repair, our skilled technicians are committed to delivering flawless results. </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-section">
+      <div class="container-service">
+        <div class="text">
+          <h3>Detailing</h3>
+          <p style="margin-bottom: 7px;">Keep your car looking immaculate with our premium detailing services, designed to protect and enhance its appearance inside and out. Our paint protection film (PPF) creates an invisible shield against scratches, rock chips, and road debris, while our ceramic coating adds a deep, long-lasting shine and safeguards your paint from UV rays, chemicals, and harsh weather. To restore your car's flawless finish, we offer paint correction, eliminating swirls, scratches, and imperfections for a showroom-quality gloss. Inside, our comprehensive interior detailing includes deep cleaning of upholstery, carpets, trims, and dashboards, ensuring a fresh, luxurious feel. Whether you're looking to preserve your vehicle's beauty or give it a complete refresh, our expert detailing services deliver stunning results.</p>
+        </div>
+        <div class="image">
+          <img src="{% static 'assets/images/detailing.jpg' %}" alt="service image">
+        </div>
+      </div>
+    </div>
+    <!--service section-->
+
+    <div class="about-section" id="about">
+      <h2>About Us</h2>
+      <div class="container">
+        <p class="description" id="paragraph about">
+          We at FastLane Garage, are a trusted name in high-performance vehicle upgrades, specializing in transforming vehicles into masterpieces of style and power. Our extensive range of services includes performance part upgrades, custom vehicle modifications, premium car care, and expert maintenance solutions. We pride ourselves on delivering personalized solutions tailored to the unique needs of every car enthusiast, ensuring each vehicle is not only visually stunning but also optimized for peak performance. As a growing brand, our commitment to excellence drives us to provide exceptional service and top-tier products for our valued customers
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!--------location and form section----------------->
+  <div class="contact-container">
+    <!--Replace the line below with '<form action="https://api.web3forms.com/submit" method="POST" class="contact-left">'.-->
+    <form action="" method="POST" class="contact-left">
+        {% csrf_token %}
+        <div class="contact-left-title">
+            <h2>Contact Us</h2>
+            <hr>
+        </div>
+        <!--Uncomment the line below and replace 'YOUR_ACCESS_KEY_HERE' with the access key you receive for your email address on the Web3 Forms website. This will allow you to receive the form details when it is submitted to that email address.-->
+        <!-- <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE"> -->
+        <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
+        <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
+        <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <div class="contact-right">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.805320760753!2d77.64297867484278!3d13.048060487274398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17bc2b8416b9%3A0x5da8f5f21637870c!2sFastLane%20Garage!5e0!3m2!1sen!2sin!4v1735923908406!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+  <!--location and form section-->
+
+  <footer class="footer">
+    <div class="container">
+     <div class="row">
+       <div class="footer-col">
+         <h4>company</h4>
+         <ul>
+           <li><a href="#about">about us</a></li>
+           <li><a href="#services">our services</a></li>
+         </ul>
+       </div>
+       <div class="footer-col">
+         <h4>Contact Us</h4>
+         <ul>
+           <li><a href="#">+91 97390 96102</a></li>
+           <li><a href="#"></a></li>
+           <li><a href="#">payment options</a></li>
+         </ul>
+       </div>
+       <div class="footer-col">
+         <h4>follow us</h4>
+         <div class="social-links">
+           <a href="#"><i class="fab fa-facebook-f"></i></a>
+           <a href="#"><i class="fab fa-twitter"></i></a>
+           <a href="https://www.instagram.com/fastlanegarageofficial/"><i class="fab fa-instagram"></i></a> 
+         </div>
+       </div>
+       {% if user.is_staff %}
+       <div class="footer-col">
+         <h4>Admin Panel</h4>
+         <ul>
+           <li><a href="{% url 'admin:index' %}">Go to Admin Panel</a></li>
+         </ul>
+       </div>
+       {% endif %}
+     </div>
+     <div class="copyright">
+       <p>&copy; {% now "Y" %} FastLane Garage. All Rights Reserved.</p>
+     </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggleMenuBtn = document.querySelector(".toggle-menu-btn");
+    const navBarLinks = document.querySelector(".navbar-links");
+    const items = document.querySelectorAll('.accordion button');
+    
+    toggleMenuBtn.addEventListener("click", () => {
+      navBarLinks.classList.toggle("active");
+      toggleMenuBtn.classList.toggle("active");
+    });
+
+    function toggleAccordion() {
+      const itemToggle = this.getAttribute('aria-expanded');
+
+      for (i = 0; i < items.length; i++) {
+        items[i].setAttribute('aria-expanded', 'false');
+      }
+
+      if (itemToggle == 'false') {
+        this.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    items.forEach((item) => item.addEventListener('click', toggleAccordion));
+  </script>
+</body>
+</html>
