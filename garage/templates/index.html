@@ -37,7 +37,6 @@
           <li><a href="#">Home</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#">Contact</a></li>
           {% if user.is_staff %}
             <li><a href="{% url 'admin:index' %}" class="admin-button">Admin Panel</a></li>
           {% endif %}
@@ -55,11 +54,11 @@
           for every car enthusiast at FastLane Garage
         </p>
         <button id="button-text">
-          Book an Appointment
+          Contact us
         </button>
       </div>
       <div class="hero-right">
-        <img src="{% static 'assets/images/garage-bg-egor-myznik-unsplash.jpg' %}" alt="image of a garage">
+        <img src="{% static 'assets/images/hero.jpeg' %}" alt="image of a garage">
       </div>
     </div>
 
@@ -127,19 +126,7 @@
   <!--------location and form section----------------->
   <div class="contact-container">
     <!--Replace the line below with '<form action="https://api.web3forms.com/submit" method="POST" class="contact-left">'.-->
-    <form action="" method="POST" class="contact-left">
-        {% csrf_token %}
-        <div class="contact-left-title">
-            <h2>Contact Us</h2>
-            <hr>
-        </div>
-        <!--Uncomment the line below and replace 'YOUR_ACCESS_KEY_HERE' with the access key you receive for your email address on the Web3 Forms website. This will allow you to receive the form details when it is submitted to that email address.-->
-        <!-- <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE"> -->
-        <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
-        <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
-        <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
-        <button type="submit">Submit</button>
-    </form>
+
     <div class="contact-right">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.805320760753!2d77.64297867484278!3d13.048060487274398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17bc2b8416b9%3A0x5da8f5f21637870c!2sFastLane%20Garage!5e0!3m2!1sen!2sin!4v1735923908406!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
@@ -156,7 +143,7 @@
            <li><a href="#services">our services</a></li>
          </ul>
        </div>
-       <div class="footer-col">
+       <div class="footer-col" id="contact-us-footer">
          <h4>Contact Us</h4>
          <ul>
            <li><a href="#">+91 97390 96102</a></li>
